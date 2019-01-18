@@ -1,4 +1,3 @@
-from web import app, feed, settings, gallery
 from .feed import *
 from json import loads
 
@@ -16,7 +15,7 @@ log = logging.getLogger(__name__)
 @app.route('/')
 def index():
     if not session.get('logged_in'):
-        return render_template('login.html', recaptcha_public= app.config['RECAPTCHA_PUBLIC_KEY'])
+        return render_template('login.html', recaptcha_public=app.config['RECAPTCHA_PUBLIC_KEY'])
     else:
         return render_template('feed.html')
 

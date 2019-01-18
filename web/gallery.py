@@ -1,8 +1,9 @@
-from . import app, feed, settings
+from . import app
 
 
-from flask import render_template, Response, make_response,jsonify,session,request,flash, send_from_directory
-from os import path, walk, listdir
+from flask import render_template, jsonify, session, send_from_directory
+from os import path, listdir
+
 
 @app.route('/gallery')
 def gallery():
@@ -10,6 +11,7 @@ def gallery():
         return render_template('login.html')
     else:
         return render_template('gallery.html')
+
 
 @app.route('/_get_images')
 def get_photos():
@@ -20,6 +22,7 @@ def get_photos():
         file_path = path.join("", data_file)
         imgs['still_imgs'].append(file_path)
     return jsonify(result=imgs, dir="/data/")
+
 
 @app.route('/data/<path:filename>')
 def imgs_dir(filename):

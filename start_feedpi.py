@@ -1,4 +1,3 @@
-import argparse
 from web import app
 import threading
 from libs.feedpi import FeedPi
@@ -38,17 +37,16 @@ def setup_logger(debug):
     script_dir = path.dirname(path.realpath(sys.argv[0]))
     if not path.exists(path.join(script_dir, 'log')):
         makedirs(path.join(script_dir, 'log'))
-
+    log = logging.getLogger(__name__)
     for module, level in debug['debug_modules'].items():
         if level is None:
             continue
         log = logging.getLogger(module)
         log.propagate = False
-        # todo log path is not good if not cd
-        handler = RotatingFileHandler(debug['log_path'], maxBytes=1048576,
-                                      backupCount=5)
+        handler = RotatingFileHandler(debug['log_path'], maxBytes=1048576, backupCount=5)
 
-        formatter = logging.Formatter('%(asctime)s%(levelname)8s()|%(filename)s:%(lineno)s - %(funcName)s() - %(message)s')
+        formatter = logging.Formatter(
+            '%(asctime)s%(levelname)8s()|%(filename)s:%(lineno)s - %(funcName)s() - %(message)s')
         handler.setFormatter(formatter)
         log.addHandler(handler)
         web_log.addHandler(handler)
@@ -57,17 +55,11 @@ def setup_logger(debug):
         handler.setFormatter(formatter)
         log.addHandler(handler)
         web_log.addHandler(handler)
-
         log.setLevel(level)
-
     return log
 
 
 if __name__ == '__main__':
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('log_level', const='DEBUG', nargs='?', default='DEBUG', choices=set(('INFO', 'DEBUG')))
-    args = vars(parser.parse_args())
 
     with open('config.json') as cnf_file:
         config = json.load(cnf_file)

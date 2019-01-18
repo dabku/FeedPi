@@ -100,9 +100,7 @@ $(document).ready(function(){
     });
 
 $(document).ready(function(){
-
     $('button#write_file').bind('click', function() {
-
         $.ajax({
             type:"POST",
             url:$SCRIPT_ROOT + '/_save_settings_file'
@@ -124,7 +122,6 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-
     $('button#apply_config').bind('click', function() {
         json=JSON.stringify({iso:$('#text_iso').val(),
         brightness:$('#text_brightness').val(),
@@ -141,17 +138,5 @@ $(document).ready(function(){
                 alert(data.result);
             }
         });
-    });
-});
-$(document).ready(function(){
-    $('button#read_piconf').bind('click', function() {
-        $.getJSON($SCRIPT_ROOT + '/_get_pi_settings', {}, function(data) {
-            console.log(data.settings);
-            $('#text_iso').val(data.settings.iso);
-            $('#text_brightness').val(data.settings.brightness);
-            $('#text_contrast').val(data.settings.contrast);
-            $('#text_framerate').val(data.settings.fps);
-         });
- return false;
     });
 });

@@ -22,13 +22,6 @@ def save_settings():
     return jsonify(result=result)
 
 
-# @app.route('/_get_settings')
-# def get():
-#     settings_json = app.config['sPi'].get_settings()
-#     settings_json['discord']['comm_port'] = settings_json['discord']['server_address'] = 'hidden'
-#     return jsonify(result='OK', settings=settings_json)
-
-
 @app.route('/_save_settings_file', methods=['POST'])
 def save_settings_file():
     if session.get('logged_in'):

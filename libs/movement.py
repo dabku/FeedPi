@@ -4,6 +4,7 @@ import logging
 
 logger = logging.getLogger('movement')
 
+
 class Movement:
     def __init__(self, config):
         # Defaults

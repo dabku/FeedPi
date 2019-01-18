@@ -6,7 +6,7 @@ import time
 from os import path
 from .movement import Movement
 
-from numpy import ones, uint8, mean
+from numpy import ones, uint8
 import logging
 if OSDetector.is_embedded():
     from .piycamera.PiyCamera.PiyCamera import PiCamera as PiyCamera
@@ -25,7 +25,7 @@ class Vision:
 
         # Defaults
         self.frame_res = self.downscaled_frame_res = [640, 480]
-        #set max resolution
+        # set max resolution
         # todo does not work on rpi
         self.feed.set_resolution(1920, 1080)
         self.noise_pass = False
@@ -86,7 +86,7 @@ class Vision:
         self.feed.set_resolution(int(config['camera_res'][0]), int(config['camera_res'][1]))
         self.feed.set_brightness(int(config['brightness']))
         self.feed.set_contrast(int(config['contrast']))
-        #todo maybe I will need shutter speed at some point
+        # todo maybe I will need shutter speed at some point
         self.feed.set_iso(int(config['iso']))
 
     def refresh_feed(self):
@@ -131,6 +131,3 @@ class Vision:
         except Exception as e:
             jpg = get_jpg_from_frame(create_blank_image_b())
         return jpg
-
-
-
