@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sPi Settings</title>
+</head>
+<body>
+	{% include "header.html" %}
+	<script src="static/settings.js">
+	</script>
+	<div class="main" >
+		<h1>Settings</h1>
+
+        <h2>General settings</h2>
+        Loop delay<input id="text_loop_delay" type="text"><br>
+        Enable overlay&nbsp;<input checked id="check_enable_overlay" type="checkbox"><br>
+		Web feed resolution<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;width: <input id="text_feed_resolution_x" type="text"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;height: <input id="text_feed_resolution_y" type="text"><br>
+
+		<h2>Movement detection settings</h2>
+        Threshold<input id="text_threshold" type="text"><br>
+		Movement threshold<input id="text_movement_threshold" type="text"><br>
+		Movement cooldown<input id="text_movement_cooldown" type="text"><br>
+        Movement low pass filter&nbsp;<input checked id="check_low_pass" type="checkbox"><br>
+		Noise filter&nbsp;<input checked id="check_noise_pass" type="checkbox"><br>
+                motion detection resolution:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;width: <input id="text_mov_resolution_x" type="text"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;height: <input id="text_mov_resolution_y" type="text"><br>
+
+		<h2>Detection actions</h2>
+		<h3>Save image</h3>
+		Enabled&nbsp;<input checked id="check_save_image" type="checkbox"><br>
+		Save image cooldown<input id="text_image_cooldown" type="text"><br>
+		Images directory<input id="text_image_dir" type="text"><br>
+
+		<h3>Save video</h3>
+		Enabled&nbsp;<input checked id="check_save_video" type="checkbox"><br>
+		Save video cooldown<input id="text_video_cooldown" type="text"><br>
+		Videos directory<input id="text_videos_dir" type="text"><br>
+
+		<h2>Camera settings</h2>iso<input id="text_iso" type="text"> (100, 200, 320, 400, 500, 640, 800)<br>
+		brightness<input id="text_brightness" type="text"> 0-100<br>
+		contrast<input id="text_contrast" type="text"> 0-100<br>
+		framerate<input id="text_framerate" type="text"><br>
+        Exposure<input id="text_exposure" type="text"><br>
+        feed resolution:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;width: <input id="text_resolution_x" type="text"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;height: <input id="text_resolution_y" type="text"><br>
+
+
+        <br>
+		<h2>Notification options</h2>
+        <h3>Discord options</h3>
+        Discord bot enabled <input checked id="check_discord_enabled" type="checkbox"><br>
+		Discord bot send on demand <input checked id="check_discord_on_demand" type="checkbox"><br>
+		Discord bot send on trigger <input checked id="check_discord_triggering" type="checkbox"><br>
+		Discord Bot trigger cooldown <input id="discord_cooldown" type="text"><br>
+		Discord Bot address <input id="discord_address" type="text"><br>
+		Discord Bot port <input id="discord_port" type="text"><br>
+		<br><br>
+		<!--
+		<button id="get_config" type="button">Read Config</button>
+		-->
+		<button id="write_file" type="button">Write Config To File</button>
+		<button id="apply_config" type="button">Apply Config</button>
+	</div>
+</body>
+</html>

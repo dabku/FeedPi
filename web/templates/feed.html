@@ -1,0 +1,37 @@
+
+<html>
+{% include "header.html" %}
+    <body>
+        <script src="static/jquery.js"></script>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
+
+    <script>var jpg_feed_url="{{ url_for('jpg_feed') }}"; </script>
+    <script>var jpg_thr_feed_url="{{ url_for('jpg_thr_feed') }}"; </script>
+
+    <script>$(document).ready(function(){
+    $('button#save_image').bind('click', function() {
+        $.ajax({
+            type:"POST",
+            url:$SCRIPT_ROOT + '/_save_image'
+        });
+    return false;
+    });
+    });</script>
+    <script src="static/jpg_stream.js" type=text/javascript></script>
+	<div class="main" >
+    <center>
+        <h1>Camera Feed</h1>
+    <img id="jpg_feed" src="{{ url_for('jpg_feed') }}">
+        <img id="jpg_thr_feed" style="display:none;" src="{{ url_for('jpg_thr_feed') }}">
+        <br>
+
+        <br><button id="save_image" type="button">Save image</button><br>
+        <input type = "checkbox"  id="movement"/><label for="checkbox"> Show movement<br></label>
+            </center>
+    <br>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+[submodule "libs/zmqconnector"]
+	path = libs/zmqconnector
+	url = https://github.com/dabku/ZmqConnector.git
+[submodule "libs/piycamera"]
+	path = libs/piycamera
+	url = https://github.com/dabku/PiyCamera.git
+[submodule "libs/ZmqConnector"]
+	path = libs/ZmqConnector
+	url = https://github.com/dabku/ZmqConnector.git
+[submodule "libs/PiyCamera"]
+	path = libs/PiyCamera
+	url = https://github.com/dabku/PiyCamera

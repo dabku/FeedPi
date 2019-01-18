@@ -1,0 +1,8 @@
+/venv
+/data
+/log
+*.log
+.idea
+config.json
+discord_config.json
+*.bkp
