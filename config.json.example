@@ -1,0 +1,55 @@
+{
+    "security": {
+        "user": "qwer1234",
+        "sha256_password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "use_recaptcha": true,
+        "recaptcha_sitekey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "recaptcha_secretkey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "use_adhoc_https": false
+    },
+    "general": {
+        "loop_delay": 0.0,
+        "overlay": true,
+        "save_images": true,
+        "images_dir": "C:/xxxxx/data/img",
+        "save_videos": true,
+        "videos_dir": "C:/xxxxx/data/video",
+        "feed_res": [
+                640,
+                360
+            ]
+    },
+    "vision": {
+        "camera": {
+            "brightness": "50",
+            "camera_res": [
+                1312,
+                976
+            ],
+            "movement_res": [
+                320,
+                240
+            ],
+            "shutter": 0,
+            "iso": "640",
+            "fps": "5",
+            "contrast": "0"
+        },
+        "movement_threshold": 100.0,
+        "frame_threshold": 15.0,
+        "movement_cooldown": 10.0,
+        "movement_low_pass": true,
+        "image_saving_cooldown": 10.0,
+        "video_saving_cooldown": 10.0,
+        "noise_pass": false,
+        "threshold": 50
+    },
+    "discord": {
+        "comm_port": 5556,
+        "server_address": "localhost",
+        "cooldown": 10,
+        "enabled": false,
+        "on_demand": true,
+        "triggering": true
+    }
+}

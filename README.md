@@ -4,7 +4,14 @@ Small project to set up camera surveillance service on a RaspberryPi (or desktop
 Stream is available on web interface and motion detection uses camera footage to determine movement amount between 
 frames. It's also possible to get current snapshot on the discord.
 
-![](docs/img/sizewell.gif)
+
+Login screen:
+
+![](docs/img/captcha.PNG)
+
+Discord notifications:
+
+![](docs/img/kuchikopi_.gif)
 ## Important
 If you are considering using ANY wireless device as a security monitoring device, especially WiFi, 
 read on how it's easy to jam a WiFi connection and switch to good old wires.
@@ -38,7 +45,8 @@ If you ever need monitoring solution, consider following two:
 Discord bot hosts ZMQ based server 
 
 ####Discord Commands
-- !clear [N]- Clears N messages. If not specified, will clear last one (plus reqest to clear)
+- !clear N- Clears N messages. If not specified, will clear last one (plus request to clear). 
+If clearing messages older than 14 days it will automatically switch to single mode and clear them one by one instead of a batch delete(Discord API limitation)
 - !spi_snap- Request latest snap from feed
 
 ### Bot communication protocol
