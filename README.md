@@ -44,7 +44,7 @@ If you ever need monitoring solution, consider following two:
 ### Discord bot
 Discord bot hosts ZMQ based server 
 
-####Discord Commands
+#### Discord Commands
 - !clear N- Clears N messages. If not specified, will clear last one (plus request to clear). 
 If clearing messages older than 14 days it will automatically switch to single mode and clear them one by one instead of a batch delete(Discord API limitation)
 - !spi_snap- Request latest snap from feed
@@ -63,7 +63,7 @@ Request latest feed snap
   },
 }
 ```
-####Client requests
+#### Client requests
 Send image to discord
 ```json
 {
