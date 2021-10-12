@@ -11,7 +11,7 @@ Jinja2==2.10
 MarkupSafe==1.0
 multidict==4.4.2
 numpy==1.15.2
-opencv-python==3.4.3.18
+opencv-python==4.2.0.32
 pyzmq==17.1.2
 requests==2.20.0
 urllib3==1.23
