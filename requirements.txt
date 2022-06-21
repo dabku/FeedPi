@@ -10,7 +10,7 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 multidict==4.4.2
-numpy==1.15.2
+numpy==1.22.0
 opencv-python==3.4.3.18
 pyzmq==17.1.2
 requests==2.20.0
